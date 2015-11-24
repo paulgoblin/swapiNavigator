@@ -11,7 +11,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     controller: "PlanetCtrl"
   })
   .state('resident', {
-    url: "/resident/:id",
+    url: "/resident/:id/:page",
     templateUrl: "partials/resident.html",
     controller: "ResidentCtrl"
   })
