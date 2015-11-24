@@ -2,7 +2,7 @@ var app = angular.module('swapiApp', ["ui.router"])
 
 app.config(function($stateProvider, $urlRouterProvider){
 
-  $urlRouterProvider.otherwise("/planets")
+  $urlRouterProvider.otherwise("/planets/1")
 
   $stateProvider
   .state('planets', {
