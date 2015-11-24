@@ -3,13 +3,11 @@ var app = angular.module('swapiApp');
 app.controller("PlanetCtrl", ['$scope', 'PlanetsSrvc', function($scope, PlanetsSrvc) {
 
   $scope.planets = PlanetsSrvc.planets;
-  console.log($scope.planets.length)
+  console.log($scope.planets)
 
   if ($scope.planets.length === 0){
     PlanetsSrvc.getPlanets.then(response => {
-      PlanetsSrvc.addPlanets(response);
-      $scope.planets = PlanetsSrvc.planets;
-
+      $scope.planets = PlanetsSrvc.addPlanets(response);
     }).catch(error => console.error(error.status))
   }
 
@@ -28,10 +26,7 @@ app.controller("PlanetCtrl", ['$scope', 'PlanetsSrvc', function($scope, PlanetsS
       });
       return planet;
     });
+    return this.planets
   }
-
-
-
-
 
 }])
