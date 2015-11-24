@@ -1,9 +1,10 @@
 var app = angular.module('swapiApp');
 
-app.controller("PlanetCtrl", ['$scope', 'PlanetsSrvc', function($scope, PlanetsSrvc) {
+app.controller("PlanetCtrl", ['$scope', 'PlanetsSrvc', 'ResidentSrvc', function($scope, PlanetsSrvc, ResidentSrvc) {
 
   $scope.planets = PlanetsSrvc.planets;
   console.log($scope.planets)
+  $scope.knownResidents = ResidentSrvc.residents;
 
   if ($scope.planets.length === 0){
     PlanetsSrvc.getPlanets.then(response => {
