@@ -6,7 +6,7 @@ app.config(function($stateProvider, $urlRouterProvider){
 
   $stateProvider
   .state('planets', {
-    url: "/planets",
+    url: "/planets/:page",
     templateUrl: "partials/planets.html",
     controller: "PlanetCtrl"
   })
