@@ -1,6 +1,12 @@
-<a ui-sref="planets({page: prevPage})">Back to Planets {{page}}</a>
-<br>
-
-{{character.name}}
-{{character.gender}}
-{{character.birth_year}}
+<div>
+  <h4 ng-show='character.name'>  {{character.name}}<h4>
+</div>
+<div ng-hide='character.name'>Loading...
+</div>
+<div>
+  <ul ng-show='character.name'>
+    <li> gender: {{character.gender}} </li>
+    <li> birth year: {{character.birth_year}} </li>
+  </ul>
+  <a ui-sref="planets({page: prevPage})">Back to Planets {{page}}</a>
+</div>

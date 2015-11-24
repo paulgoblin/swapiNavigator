@@ -1,4 +1,6 @@
+<h3>Planets</h3>
 <ul>
+  <li ng-hide='planets'>Loading...</li>
   <li ng-repeat="planet in planets">{{planet.name}} -- {{planet.population}}
     <ul>
       <li ng-repeat="resident in planet.residents">
