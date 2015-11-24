@@ -2,6 +2,7 @@ var app = angular.module('swapiApp');
 
 app.controller("ResidentCtrl", ['$scope', '$stateParams', 'ResidentSrvc', function($scope, $stateParams, ResidentSrvc) {
 
+  $scope.prevPage = $stateParams.page;
   $scope.character = ResidentSrvc.residents[$stateParams.id] ||
     ResidentSrvc.getResident($stateParams.id).then(resp => {
       $scope.character = ResidentSrvc.addResident(resp.data, $stateParams);
