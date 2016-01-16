@@ -13,10 +13,10 @@ gulp.task('clean', function(){
 
 gulp.task('js', function(){
   gulp.src('js/*.js')
-    .pipe(concat('bundle.js'))
     .pipe(babel({
       presets: ['es2015']
     }))
+    .pipe(concat('bundle.js'))
     .pipe(uglify())
     .pipe(gulp.dest('dist'))
 })
