@@ -1,20 +1,35 @@
 body {
   background: #414141;
+  font-family: 'Arimo', sans-serif;
 }
 
-.header, .subHeader {
-  font-family: 'Arimo', sans-serif;
-  min-height: 10em;
-  color: #F18072;
-  display: flex;
-  align-items: center;
-}
-.title {
-  align-self: flex-end;
+h1 {
   font-size: 50px;
 }
+
+@media(max-width: 700px) {
+  h1 {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+}
+
+.header {
+  min-height: 10em;
+  color: #F18072;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+.title {
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+}
 .sub {
-  align-self: flex-start;
+  text-align: center;
+  margin: auto;
 }
 #content {
   background-color: #FEFEFE;
