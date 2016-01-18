@@ -1,20 +1,22 @@
-var app = angular.module('swapiApp');
+var app = angular.module('swapiApp')
 
-app.controller("PlanetCtrl", ['$scope', 'PlanetsSrvc', 'ResidentSrvc', '$stateParams', function($scope, PlanetsSrvc, ResidentSrvc, $stateParams) {
+.controller("PlanetCtrl", ['$scope', 'PlanetsSrvc', 'ResidentSrvc', '$stateParams', function($scope, PlanetsSrvc, ResidentSrvc, $stateParams) {
 
-  $scope.page = $stateParams.page;
+  $scope.pages = [1,2,3,4,5,6,7];
+  $scope.activePage = Number($stateParams.page);
   $scope.planets = PlanetsSrvc.planets[$scope.page];
-  console.log($scope.planets)
   $scope.knownResidents = ResidentSrvc.residents;
 
   if (!$scope.planets){
-    PlanetsSrvc.getPlanets($scope.page).then(response => {
+    PlanetsSrvc.getPlanets($scope.activePage).then(response => {
       console.log('response', response)
-      $scope.planets = PlanetsSrvc.addPlanets(response, $scope.page);
+      $scope.planets = PlanetsSrvc.addPlanets(response, $scope.activePage);
     }).catch(error => console.error(error.status))
   }
 
-}]).service('PlanetsSrvc',[ '$http', function($http){
+}])
+
+.service('PlanetsSrvc',[ '$http', function($http){
 
   this.planets = {};
 
@@ -33,6 +35,4 @@ app.controller("PlanetCtrl", ['$scope', 'PlanetsSrvc', 'ResidentSrvc', '$statePa
     });
     return this.planets[page]
   };
-
-
 }])

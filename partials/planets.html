@@ -1,21 +1,32 @@
-<h3>Planets</h3>
+<div class="planetsHeader" ng-show='planets'>
+  <h3 class="planetsTitle">Planets</h3>
+  <ul class="pagination planetsPage">
+    <li ng-class="{ 'disabled' : activePage===1}">
+      <a ui-sref="planets({page:activePage-1 || 1})" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li ng-repeat="page in pages" ng-class="{ 'active' : page===activePage}">
+      <a ui-sref="planets({page:page})">{{page}}</a>
+    </li>
+    <li ng-class="{ 'disabled' : activePage===pages.slice(-1)}">
+      <a ui-sref="planets({page: Math.min(activePage+1,7) })" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="loadingWrapper" ng-hide='planets'>
+  <h2>loading planets</h2>
+</div>
 <ul>
-  <li ng-hide='planets'>Loading...</li>
   <li ng-repeat="planet in planets">{{planet.name}} -- {{planet.population}}
     <ul>
       <li ng-repeat="resident in planet.residents">
-        <a ui-sref="resident({id: resident.id, page: page})">{{ knownResidents[resident.id].name || 'Resident ' + resident.id}}</a>
+        <a ui-sref="resident({id: resident.id, page: activePage})">{{ knownResidents[resident.id].name || 'Resident ' + resident.id}}</a>
       </li>
     </ul>
   </li>
 </ul>
-
-<p>More Planets ...</p>
-<a ui-sref="planets({page:1})"> 1   </a>
-<a ui-sref="planets({page:2})"> 2   </a>
-<a ui-sref="planets({page:3})"> 3   </a>
-<a ui-sref="planets({page:4})"> 4   </a>
-<a ui-sref="planets({page:5})"> 5   </a>
-<a ui-sref="planets({page:6})"> 6   </a>
-<a ui-sref="planets({page:7})"> 7</a> 
-

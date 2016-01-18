@@ -19,7 +19,7 @@ h1 {
 .header {
   min-height: 10em;
   color: #F18072;
-  margin-top: 2em;
+  margin-top: 3em;
   margin-bottom: 1em;
 }
 .title {
@@ -34,4 +34,19 @@ h1 {
 #content {
   background-color: #FEFEFE;
   color: #414141;
+}
+.loadingWrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-image: url("http://www.arabianbusiness.com/skins/ab.main/gfx/loading_spinner.gif");
+  margin: auto;
+  margin-top: 5em;
+}
+
+.loadingWrapper > h2 {
+  color: #F18072;
+  opacity: .5;
+  padding-top: 68px;
+  text-align: center;
 }
