@@ -1,0 +1,22 @@
+body {
+  background: #414141;
+}
+
+.header, .subHeader {
+  font-family: 'Arimo', sans-serif;
+  min-height: 10em;
+  color: #F18072;
+  display: flex;
+  align-items: center;
+}
+.title {
+  align-self: flex-end;
+  font-size: 50px;
+}
+.sub {
+  align-self: flex-start;
+}
+#content {
+  background-color: #FEFEFE;
+  color: #414141;
+}
