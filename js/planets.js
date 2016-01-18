@@ -2,7 +2,7 @@
 
 angular.module('swapiApp')
 
-.controller("PlanetCtrl", ['$scope', 'PlanetsSrvc', 'ResidentSrvc', '$stateParams', function($scope, PlanetsSrvc, ResidentSrvc, $stateParams) {
+.controller("PlanetCtrl", ['$scope', 'PlanetsSrvc', 'ResidentSrvc', 'ScrapeSrvc', '$stateParams', function($scope, PlanetsSrvc, ResidentSrvc, ScrapeSrvc, $stateParams) {
 
   $scope.pages = [1,2,3,4,5,6,7];
   $scope.activePage = Number($stateParams.page);
