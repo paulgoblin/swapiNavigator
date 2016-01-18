@@ -6,8 +6,8 @@ angular.module('swapiApp')
 
   $scope.pages = [1,2,3,4,5,6,7];
   $scope.activePage = Number($stateParams.page);
+  $scope.planets = PlanetsSrvc.planets[$scope.activePage];
   $scope.nextPage = Math.min($scope.activePage + 1, $scope.pages.slice(-1));
-  $scope.planets = PlanetsSrvc.planets[$scope.page];
   $scope.knownResidents = ResidentSrvc.residents;
 
   if (!$scope.planets){

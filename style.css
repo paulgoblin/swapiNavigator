@@ -53,10 +53,8 @@ h1 {
 
 .planetsHeader {
   overflow: auto;
+  text-align: center;
 }
-.planetsTitle {
-  float: left;
-}
+
 .planetsPagination {
-  float: right;
 }
