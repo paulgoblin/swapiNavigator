@@ -1,9 +1,12 @@
-var app = angular.module('swapiApp')
+'use strict'
+
+angular.module('swapiApp')
 
 .controller("PlanetCtrl", ['$scope', 'PlanetsSrvc', 'ResidentSrvc', '$stateParams', function($scope, PlanetsSrvc, ResidentSrvc, $stateParams) {
 
   $scope.pages = [1,2,3,4,5,6,7];
   $scope.activePage = Number($stateParams.page);
+  $scope.nextPage = Math.min($scope.activePage + 1, $scope.pages.slice(-1));
   $scope.planets = PlanetsSrvc.planets[$scope.page];
   $scope.knownResidents = ResidentSrvc.residents;
 

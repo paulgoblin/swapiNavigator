@@ -1,3 +1,5 @@
+'use strict'
+
 var app = angular.module('swapiApp');
 
 app.controller("ResidentCtrl", ['$scope', '$stateParams', 'ResidentSrvc', function($scope, $stateParams, ResidentSrvc) {

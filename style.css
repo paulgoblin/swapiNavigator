@@ -50,3 +50,13 @@ h1 {
   padding-top: 68px;
   text-align: center;
 }
+
+.planetsHeader {
+  overflow: auto;
+}
+.planetsTitle {
+  float: left;
+}
+.planetsPagination {
+  float: right;
+}

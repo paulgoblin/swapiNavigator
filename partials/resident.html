@@ -1,8 +1,7 @@
 <div>
   <h4 ng-show='character.name'>  {{character.name}}<h4>
 </div>
-<div ng-hide='character.name'>Loading...
-</div>
+<loading-icon ng-hide="character.name" loading-message="loading resident"></loading-icon>
 <div>
   <ul ng-show='character.name'>
     <li> gender: {{character.gender}} </li>

@@ -1,6 +1,8 @@
-var app = angular.module('swapiApp', ["ui.router"])
+'use strict'
 
-app.config(function($stateProvider, $urlRouterProvider){
+angular.module('swapiApp', ["ui.router"])
+
+.config(function($stateProvider, $urlRouterProvider){
 
   $urlRouterProvider.otherwise("/planets/1")
 
